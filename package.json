@@ -1,5 +1,6 @@
 {
   "name": "app-store-ui-using-react-and-framer-motion",
+  "homepage": "https://rplumlee.github.io/portfolio",
   "version": "1.0.0",
   "description": "",
   "keywords": [],
@@ -9,6 +10,7 @@
     "@types/lodash": "4.14.136",
     "@types/react-router-dom": "4.3.4",
     "framer-motion": "https://pkg.csb.dev/framer/motion/commit/a9547d6f/framer-motion",
+    "gh-pages": "^3.1.0",
     "lodash": "4.17.15",
     "popmotion": "9.0.0-beta-8",
     "react": "16.8.4",
