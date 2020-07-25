@@ -4,7 +4,6 @@ import { motion, useMotionValue } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useInvertedBorderRadius } from "../utils/use-inverted-border-radius";
 import { CardData } from "../types";
-import { ContentPlaceholder } from "./ContentPlaceholder";
 import { Title } from "./Title";
 import { Image } from "./Image";
 import { openSpring, closeSpring } from "./animations";
@@ -30,7 +29,14 @@ export const Card = memo(
     category,
     history,
     pointOfInterest,
-    backgroundColor
+    width,
+    startX,
+    endX,
+    startY,
+    endY,
+    overlayColor,
+    description,
+    links,
   }: Props) => {
     const y = useMotionValue(0);
     const zIndex = useMotionValue(isSelected ? 2 : 0);
@@ -64,6 +70,8 @@ export const Card = memo(
       isSelected
     );
 
+    const updatedDescription = description.split('|');
+
     return (
       <li ref={containerRef} className={`card`}>
         <Overlay isSelected={isSelected} />
@@ -82,10 +90,21 @@ export const Card = memo(
               id={id}
               isSelected={isSelected}
               pointOfInterest={pointOfInterest}
-              backgroundColor={backgroundColor}
+              width={width}
+              startX={startX}
+              endX={endX}
+              startY={startY}
+              endY={endY}
+              overlayColor={overlayColor}
             />
             <Title title={title} category={category} isSelected={isSelected} />
-            <ContentPlaceholder />
+            <motion.div
+              className="content-container"
+              style={{ ...inverted, originY: 0, originX: 0 }}
+            >
+              {updatedDescription.map((string) => {return <p>{string}</p>})}
+              {links ? links.map((link) => {return <a href={link.linkHref} className="card-button" target="blank">{link.linkText}</a>}) : " "}
+            </motion.div>
           </motion.div>
         </div>
         {!isSelected && <Link to={id} className={`card-open-link`} />}
@@ -103,6 +122,6 @@ const Overlay = ({ isSelected }) => (
     style={{ pointerEvents: isSelected ? "auto" : "none" }}
     className="overlay"
   >
-    <Link to="/" />
+    <Link to="/portfolio/" />
   </motion.div>
 );

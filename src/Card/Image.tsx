@@ -6,23 +6,29 @@ export const Image = ({
   id,
   isSelected,
   pointOfInterest = 0,
-  backgroundColor
+  width,
+  startX,
+  endX,
+  startY,
+  endY,
+  overlayColor
 }) => {
   const inverted = useInvertedScale();
 
   return (
     <motion.div
       className="card-image-container"
-      style={{ ...inverted, backgroundColor, originX: 0, originY: 0 }}
-    >
+      style={{ ...inverted, originX: 0, originY: 0 }}
+    > <div className="card-image-overlay" style={{background: overlayColor}}></div>
       <motion.img
         className="card-image"
-        src={`images/${id}.jpg`}
+        src={`images/${id}.png`}
         alt=""
         initial={false}
         animate={
-          isSelected ? { x: -20, y: -20 } : { x: -pointOfInterest, y: 0 }
+          isSelected ? { x: endX, y: endY} : { x: startX, y: startY }
         }
+        style={{width: width}}
         transition={closeSpring}
       />
     </motion.div>
