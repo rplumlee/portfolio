@@ -4,7 +4,7 @@ import { Header } from "./Header";
 import { CardList } from "./CardList";
 
 import "./styles.css";
-
+document.title = "Reid's Portfolio"
 function App() {
   return (
     <div className="container">
