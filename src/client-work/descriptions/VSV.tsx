@@ -15,11 +15,11 @@ export function VSV() {
             </p>
             
           </div>
-          <div className="image"><motion.img src="../../images/vsv-1.png" whileTap={{scale: 2, zIndex: 5}}/></div>
+          <div className="image"><motion.img src="../images/vsv-1.png" whileTap={{scale: 2, zIndex: 5}}/></div>
       </div>
 
       <div>
-        <div className="image"><motion.img src="../../images/vsv-2.png" whileTap={{scale: 2, zIndex: 5}}/></div>
+        <div className="image"><motion.img src="../images/vsv-2.png" whileTap={{scale: 2, zIndex: 5}}/></div>
         <div className="content">
             <h3>Development</h3>
             <p>

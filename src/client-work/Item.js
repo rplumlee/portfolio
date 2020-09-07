@@ -180,7 +180,7 @@ export function Item({ id, history }) {
             className="card-image-container"
             layoutId={`card-image-container-${id}`}
           >
-            <img className="card-image" src={`../images/${id}.png`} alt="" />
+            <img className="card-image" src={`./images/${id}.png`} alt="" />
           </motion.div>
           <motion.div
             className="title-container"
