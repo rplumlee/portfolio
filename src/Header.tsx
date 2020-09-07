@@ -1,23 +1,44 @@
 import * as React from "react";
-import { Avatar } from "react-lorem-ipsum";
-import { motion, useInvertedScale } from "framer-motion";
+import {
+  useViewportScroll,
+  useTransform,
+  useSpring,
+  motion
+} from "framer-motion";
 
-export const Header = () => (
-  <header style={{display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "30px", position: "relative"}}>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style={{position:"absolute",top:-80,left:"50%",transform: "translateX(-50%) rotate(180deg)",width: "100vw",zIndex:-1}}>
-    <path fill="#273036" fill-opacity=".5" d="M0,224L60,192C120,160,240,96,360,90.7C480,85,600,139,720,138.7C840,139,960,85,1080,58.7C1200,32,1320,32,1380,32L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
-  </svg>
-  <h2>Some things I've been working on</h2>
-   
-      <motion.img
-        className="me-image"
-        src="images/me.jpg"
-        alt=""
-        style={{borderRadius: 35, height:70, width:70}}
-        initial={{opacity: 0, y: 50}}
-        animate={{opacity: 1, y: 0}}
-      />
-   
-          
-  </header>
-);
+export const Header = () => {
+
+  const { scrollY } = useViewportScroll();
+  const y1 = {y: useSpring(useTransform(scrollY, [0, 680, 20000], ["0%", "200px", "20000px"]), {damping: 12})};
+  const y2 = {y: useSpring(useTransform(scrollY, [0, 680, 20000], ["0%", "300px", "20000px"]))};
+  const y3 = {y: useSpring(useTransform(scrollY, [0, 680, 20000], ["0%", "400px", "20000px"]))};
+  const y4 = {y: useSpring(useTransform(scrollY, [0, 680, 20000], ["0%", "500px", "20000px"]))};
+  const y5 = {y: useSpring(useTransform(scrollY, [0, 680, 20000], ["0%", "0", "20000px"]))};
+  const y6 = {y: useSpring(useTransform(scrollY, [0, 900, 20000], ["0%", "100px", "20000px"]))};
+  const y8 = {y: useSpring(useTransform(scrollY, [0, 500], ["0%", "250px"])), opacity: useSpring(useTransform(scrollY, [0, 600], [1, .0]))};
+  const [offsetTop, setOffsetTop] = React.useState(0);
+  
+  return(
+    <div style={{overflowY: "hidden",width: "100vw"}}>
+      
+      <div className="parallax"style={{height: 800, overflow: "hidden", position: "relative"}}>
+        
+      <motion.img src="images/landing/5.jpg" initial={{ y: 0 }} style={ y5 }/>
+      <motion.img src="images/landing/4.png" initial={{ y: 0 }} style={ y4 }/>
+      <motion.img src="images/landing/3.png" initial={{ y: 0 }} style={ y3 }/>
+      <motion.img src="images/landing/2.png" initial={{ y: 0 }} style={ y2 }/>
+      <motion.img className="foreground" src="images/landing/1.png" initial={{ y: 0 }} style={ y1 }/>
+      <motion.h1 initial={{ y: 0 }} style={ y8 } className="intro-h1"><span><span style={{fontWeight: 300,fontSize:"1.5em"}}>{'\{'}</span>React Perspective</span><small>By Reid Plumlee</small></motion.h1>
+     
+
+
+    
+    
+        
+        
+        
+      </div>
+
+
+  </div>
+)};

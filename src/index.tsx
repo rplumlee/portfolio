@@ -1,16 +1,19 @@
 import * as React from "react";
 import { render } from "react-dom";
-import { Header } from "./Header";
-import { CardList } from "./CardList";
+import { Main } from "./main";
+import {
+  BrowserRouter as Router,
+} from "react-router-dom";
 
-import "./styles.css";
+import "./styles.scss";
 document.title = "Reid's Portfolio"
+
 function App() {
   return (
-    <div className="container">
-      <Header />
-      <CardList />
-    </div>
+        <Router basename="/portfolio">
+          <Main />
+        </Router>   
+    
   );
 }
 

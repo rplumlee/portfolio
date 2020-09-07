@@ -11,6 +11,7 @@ export interface CardData {
   endY: number;
   description: string;
   links?: Link[];
+  titleFont: string;
 }
 
 export interface Link{
