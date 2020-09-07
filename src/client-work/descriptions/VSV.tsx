@@ -9,24 +9,22 @@ export function VSV() {
           <div className="content">
             <h3>Overview</h3>
             <p>
-                Since our team built out this site (nearly 7 years ago), Smith has become the most successful ecommerce channel for their 
-                parent company by a large margin. I served as account lead for the last year, consulting with the Smith team and working on 
-                the code base leading up to their transition to a new site. 
+              Another client I've spent quite a bit of time working with is Visit Sun Valley. It is an expansive Wordpress site with all 
+              sorts of tourism resources for Sun Valley, Idaho featuring custom plugins, post types, and templates.
             </p>
             
           </div>
-          <div className="image"><motion.img src="../images/vsv-1.png" whileTap={{scale: 2, zIndex: 5}}/></div>
+          <div className="image"><motion.img src="../images/vsv-1-min.png" whileHover={{scale: 1.7, zIndex: 5}}/></div>
       </div>
 
       <div>
-        <div className="image"><motion.img src="../images/vsv-2.png" whileTap={{scale: 2, zIndex: 5}}/></div>
+        <div className="image"><motion.img src="../images/vsv-2-min.png" whileHover={{scale: 1.7, zIndex: 5}}/></div>
         <div className="content">
             <h3>Development</h3>
             <p>
-                The site is built on SAP's Hybris ecommerce platform, with a JAVA/Spring backend and JSTL templating. 
-                My development time was split pretty evenly between maintenance, feature development, and design. I extended 
-                the java backend, designed and coded product features and landing pages, integrated 3rd party plugins and analytics,
-                and built out interfaces with React. 
+                I've done all sorts of maintenance and work on this site. Most of the templating for the site resources was done in PHP, but the 
+                interfaces often involved Greensock or Handlebars. Recently I integrated and built out the structure of FlowXO chatbot and have 
+                been working on a custom redo of their calendar plugin using Wordpress' REST API and Handlebars.
             </p>
           </div>
       </div>

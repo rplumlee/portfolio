@@ -26,14 +26,10 @@ export function Item({ id, history }) {
   const [isPresent, safeToRemove] = usePresence()
 
   React.useEffect(() => {
-    !isPresent && setTimeout(safeToRemove, 350)
-
-
+    !isPresent && setTimeout(safeToRemove, 450)
     isPresent && setTimeout(() => { 
       constraints = calculateScrollConstraints(cardRef)
-    }, 350)
-
-    
+    }, 450)    
   }, [isPresent])
 
   function calculateScrollConstraints(ref){
@@ -56,7 +52,7 @@ export function Item({ id, history }) {
   let deltaThreshold = 5;
 
   // If wheel event fires beyond constraints, multiple the delta by this amount
-  let elasticFactor = .5;
+  let elasticFactor = .3;
   
   function springTo(value, from, to) {
     if (value.isAnimating()) return;
@@ -87,23 +83,14 @@ export function Item({ id, history }) {
 
     
     if(event.type == 'touchmove'){
-      elasticFactor = .5
       if(lastY){
-
-        event.deltaY = (lastY - event.changedTouches[0].clientY) * 1.33
-        
+        event.deltaY = (lastY - event.changedTouches[0].clientY) * 3
         lastY = event.changedTouches[0].clientY
       }
       else{
-        event.deltaY = (startY - event.changedTouches[0].clientY) * 1.33
-
-        console.log(event.deltaY)
+        event.deltaY = (startY - event.changedTouches[0].clientY) * 3
         lastY = event.changedTouches[0].clientY
       }
-
-    }
-    else{
-      elasticFactor = .3
     }
 
     const currentY = y.get();
@@ -159,7 +146,6 @@ export function Item({ id, history }) {
   useDomEvent(containerRef, "touchmove", isPresent && onWheel, { passive: false });
   useDomEvent(containerRef, "wheel", isPresent && onWheel, { passive: false });
 
-  console.log(cardRef)
   return (
     <>
       <motion.div
@@ -171,7 +157,7 @@ export function Item({ id, history }) {
       >
         <Link to="/client-work/" />
       </motion.div>
-      <div className="card-content-container open" style={{zIndex:5}}>
+      <div className="card-content-container open">
         <motion.div className="card-content" layoutId={`card-container-${id}`} 
             style={isPresent ? {y} : {y: 0}}
             ref={cardRef}

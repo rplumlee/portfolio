@@ -15,11 +15,11 @@ export function Smith() {
             </p>
             
           </div>
-          <div className="image"><motion.img src="../images/smith-1.png" whileTap={{scale: 2, zIndex: 5}}/></div>
+          <div className="image"><motion.img src="../images/smith-1-min.png" whileHover={{scale: 1.7, zIndex: 5}}/></div>
       </div>
 
       <div>
-        <div className="image"><motion.img src="../images/smith-3.png" whileTap={{scale: 2, zIndex: 5}}/></div>
+        <div className="image"><motion.img src="../images/smith-3-min.png" whileHover={{scale: 1.7, zIndex: 5}}/></div>
         <div className="content">
             <h3>Development</h3>
             <p>
@@ -42,7 +42,7 @@ export function Smith() {
             </p>
             
           </div>
-          <div className="image"><motion.img src="../images/smith-2.png" whileTap={{scale: 2, zIndex: 5}}/></div>
+          <div className="image"><motion.img src="../images/smith-2-min.png" whileHover={{scale: 1.7, zIndex: 5}}/></div>
       </div>
     </div>
   );

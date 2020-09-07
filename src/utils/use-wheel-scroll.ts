@@ -11,7 +11,7 @@ interface Constraints {
 
 // Absolute distance a wheel scroll event can travel outside of
 // the defined constraints before we fire a "snap back" animation
-const deltaThreshold = 5;
+const deltaThreshold = 30;
 
 // If wheel event fires beyond constraints, multiple the delta by this amount
 const elasticFactor = 0.2;

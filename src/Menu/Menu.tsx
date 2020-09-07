@@ -19,8 +19,8 @@ const sidebar = {
     }
   }),
   closed: {
-    clipPath: "circle(25px at 41px 60px)",
-    background: "rgba(255,255,255,.28)",
+    clipPath: "circle(1px at 41px 60px)",
+    background: "rgba(255,255,255,.0)",
     zIndex: -1,
     transition: {
       delay: 0.5,
@@ -61,7 +61,7 @@ export const Menu = ({isOpen, toggleOpen}) => {
       <Navigation isOpen={isOpen} toggle={() => toggleOpen()}/>
       
     </motion.nav>
-      <motion.span animate={isOpen ? "open" : "closed"} initial={false} style={{position: "fixed",zIndex:1000}}><MenuToggle toggle={() => toggleOpen()} isOpen={isOpen}  /></motion.span>
+      <motion.span animate={isOpen ? "open" : "closed"} initial={false} className="menu-wrap"><MenuToggle toggle={() => toggleOpen()} isOpen={isOpen}  /></motion.span>
     </span>
     
   );

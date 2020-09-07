@@ -20,6 +20,16 @@ export const items = [
     description: "I spent the better part of the last three years on a team maintaining Smith's legacy ecommerce system, troubleshooting every kind of issue you can imagine and building out features. Here are some highlights:|-Building out custom landing pages with GreenSock|-Redoing the checkout system in React|-Coding features for handling warranty claims|-Handling complex data processing for a system transition",
    
   },
+  {
+    id: "firstlite",
+    category: "Shopify, Greensock",
+    title: "First Lite",
+    titleColor: "#ffffff",
+    pointOfInterest: 200,
+    backgroundColor: "#8F986D",
+    description: "I spent the better part of the last three years on a team maintaining Smith's legacy ecommerce system, troubleshooting every kind of issue you can imagine and building out features. Here are some highlights:|-Building out custom landing pages with GreenSock|-Redoing the checkout system in React|-Coding features for handling warranty claims|-Handling complex data processing for a system transition",
+   
+  },
   // Photo by Alessandra Caretto on Unsplash
   {
     id: "vsv",
@@ -32,16 +42,7 @@ export const items = [
    
   },
   // Photo by Taneli Lahtinen on Unsplash
-  {
-    id: "firstlite",
-    category: "Shopify, Greensock",
-    title: "First Lite",
-    titleColor: "#ffffff",
-    pointOfInterest: 200,
-    backgroundColor: "#8F986D",
-    description: "I spent the better part of the last three years on a team maintaining Smith's legacy ecommerce system, troubleshooting every kind of issue you can imagine and building out features. Here are some highlights:|-Building out custom landing pages with GreenSock|-Redoing the checkout system in React|-Coding features for handling warranty claims|-Handling complex data processing for a system transition",
-   
-  },
+
   // Photo by Simone Hutsch on Unsplash
   {
     id: "moore",

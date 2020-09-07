@@ -49,6 +49,20 @@
   margin: 0 auto;
 
 }
+.menu-wrap{
+  position: fixed;
+  z-index: 1000;
+  
+  @media(max-width:1100px){
+    position: absolute;
+
+  }
+}
+@media(max-width:1100px){
+  nav .background{
+    
+  }
+}
 .logo{
 
   font-size: 30px;
@@ -68,8 +82,12 @@
   padding: 0;
   padding-top:3px;
 
+  @media(max-width:1100px){
+    background: transparent;
+  }
+
   &:hover{
-    background: rgba(255,255,255,.12);
+    position: absolute;
   }
   
 
@@ -79,6 +97,7 @@
  
     }
   }
+
 }
 .parallax .re-landing{
   width: 60%;
@@ -158,6 +177,11 @@ h1.title{
   padding-bottom:15px;
   text-align: left;
   margin-top: 38px;
+
+  @media(max-width:1100px){
+    padding-left:70px;
+
+  }
 }
 #root {
   display: flex;
@@ -255,7 +279,7 @@ li {
   left: 0;
   right: 0;
   position: fixed;
-  z-index: 2;
+  z-index: 1001;
   overflow: hidden;
   padding: 40px 0;
 
@@ -299,6 +323,8 @@ li {
   overflow: hidden;
   height: 440px;
   width: 100vw;
+  display: flex;
+  align-items: center;
 }
 
 
@@ -379,7 +405,7 @@ h2 {
   &>div{
     display: flex;
     margin: 0;
-    padding: 40px 0;
+    padding: 60px 0;
     position:relative;
     background: #fff;
     overflow: visible;
@@ -459,10 +485,11 @@ h2 {
       
       }
       img{
-        box-shadow: 0px 10px 12px rgba(0,0,0,.04);
+        box-shadow: 0px 15px 22px rgba(0,0,0,.12);
         transform-origin: center right;
         cursor: pointer;
-
+       
+   
         @media (max-width: 800px) {
           transform-origin: center center;
         }

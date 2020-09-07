@@ -9,24 +9,21 @@ export function Decked() {
           <div className="content">
             <h3>Overview</h3>
             <p>
-                Since our team built out this site (nearly 7 years ago), Smith has become the most successful ecommerce channel for their 
-                parent company by a large margin. I served as account lead for the last year, consulting with the Smith team and working on 
-                the code base leading up to their transition to a new site. 
+                We recently launched the Decked online store with a custom React interfaces. The site features customizable drawer systems for truck and is 
+                heavy with product feature content and custom product category design.
             </p>
             
           </div>
-          <div className="image"><motion.img src="../images/decked-1.png" whileTap={{scale: 2, zIndex: 5}}/></div>
+          <div className="image"><motion.img src="../images/decked-2-min.png" whileHover={{scale: 1.7, zIndex: 5}}/></div>
       </div>
 
       <div>
-        <div className="image"><motion.img src="../images/decked-2.png" whileTap={{scale: 2, zIndex: 5}}/></div>
+        <div className="image"><motion.img src="../images/decked-1-min.png" whileHover={{scale: 1.7, zIndex: 5}}/></div>
         <div className="content">
             <h3>Development</h3>
             <p>
-                The site is built on SAP's Hybris ecommerce platform, with a JAVA/Spring backend and JSTL templating. 
-                My development time was split pretty evenly between maintenance, feature development, and design. I extended 
-                the java backend, designed and coded product features and landing pages, integrated 3rd party plugins and analytics,
-                and built out interfaces with React. 
+                Decked's theme development required heavy work with liquid templates for the layout and React for the product features, all optimized for a 
+                professional feel. Recently I've been implementing i18next with locizify to translate the store dynamically.
             </p>
           </div>
       </div>
