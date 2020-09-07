@@ -108,7 +108,7 @@ enum Type {
                     </ul>
                   </AnimateSharedLayout>
                 </div>
-                <div className="container" style={{maxHeight: "100%"}}> 
+                <div className="container"> 
                   <motion.div className="profile-wrapper" animate={!partyMode ? {opacity: 1} : {opacity: 0}}>
                     <img src="images/me.jpg" className="avatar" />
                     <h1>Reid Plumlee</h1>
