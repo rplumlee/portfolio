@@ -81,13 +81,13 @@ enum Type {
               </Route>
               <Route path="/resume">
                 <div className="container resume"> 
-                  <img src="images/resume.png" />
+                  <img src={`${process.env.PUBLIC_URL}/images/resume.png`} />
                 </div>
               </Route>
               <Route path="/">
                 <div className="contact">
                   <motion.a whileHover="hover" whileTap="hover" layout href="mailto:reidjplumlee@gmail.com"><FaEnvelope size={20} /><motion.span initial={{opacity:0, x: 30}} variants={variants}>reidjplumlee@gmail.com</motion.span></motion.a>
-                  <motion.a whileHover="hover" whileTap="hover" layout href="/resume"><FaFileCode size={20} /><motion.span initial={{opacity:0, x: 30}} variants={variants}>Resume</motion.span></motion.a>
+                  <motion.a whileHover="hover" whileTap="hover" layout href={`${process.env.PUBLIC_URL}/resume`}><FaFileCode size={20} /><motion.span initial={{opacity:0, x: 30}} variants={variants}>Resume</motion.span></motion.a>
                   <motion.a whileHover="hover" whileTap="hover" layout href="https://linkedin.com/in/reid-plumlee" target="_blank"><FaLinkedin size={20} /><motion.span initial={{opacity:0, x: 30}} variants={variants}>Linkedin</motion.span></motion.a>
                 </div>
                 <div className="switch" data-partymode={partyMode} onClick={toggleSwitch}>

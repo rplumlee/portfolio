@@ -12,7 +12,7 @@ function Card({ id, title, category, theme, titleColor }) {
             className="card-image-container"
             layoutId={`card-image-container-${id}`}
           >
-            <motion.img className="card-image" src={`./images/${id}.png`} alt="" />
+            <motion.img className="card-image" src={`${process.env.PUBLIC_URL}/images/${id}.png`} alt="" />
           </motion.div>
           <motion.div
             className="title-container"

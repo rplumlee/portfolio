@@ -5,6 +5,7 @@ import { useDomEvent, motion, useMotionValue, usePresence } from "framer-motion"
 import { spring } from "popmotion";
 import { mix } from "@popmotion/popcorn";
 import { debounce } from "lodash";
+
 import { Smith } from "./descriptions/Smith"
 import { Decked } from "./descriptions/Decked"
 import { SIP } from "./descriptions/SIP"
@@ -14,22 +15,23 @@ import { VSV } from "./descriptions/VSV"
 
 export function Item({ id, history }) {
   let constraints = {
-    top: -0,
+    top: 0,
     bottom: 0
   }
   const { category, title, titleColor } = items.find(item => item.id === id);
+
   const cardRef = React.useRef(null);
   const containerRef = React.useRef(window);
+
   const dismissDistance = 120;
   const y = useMotionValue(0);
-  const zIndex = useMotionValue(isPresent ? 2 : 0);
   const [isPresent, safeToRemove] = usePresence()
 
   React.useEffect(() => {
     !isPresent && setTimeout(safeToRemove, 450)
     isPresent && setTimeout(() => { 
       constraints = calculateScrollConstraints(cardRef)
-    }, 450)    
+    }, 1000)    
   }, [isPresent])
 
   function calculateScrollConstraints(ref){
@@ -166,7 +168,7 @@ export function Item({ id, history }) {
             className="card-image-container"
             layoutId={`card-image-container-${id}`}
           >
-            <img className="card-image" src={`../images/${id}.png`} alt="" />
+            <img className="card-image" src={`${process.env.PUBLIC_URL}/images/${id}.png`} alt="" />
           </motion.div>
           <motion.div
             className="title-container"

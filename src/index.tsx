@@ -9,8 +9,10 @@ import "./styles.scss";
 document.title = "Reid's Portfolio"
 
 function App() {
+
+  console.log(process.env.PUBLIC_URL)
   return (
-        <Router basename="/portfolio">
+        <Router basename={process.env.PUBLIC_URL}>
           <Main />
         </Router>   
     
