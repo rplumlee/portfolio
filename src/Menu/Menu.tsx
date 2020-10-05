@@ -7,27 +7,27 @@ import { Navigation } from "./Navigation";
 
 const sidebar = { 
   open: (height = 1000) => ({
-    clipPath: `circle(800px at 39px 57px)`,
+    clipPath: `circle(1200px at 0px 0px)`,
     background: "rgba(255,255,255,1)",
     zIndex: 100,
     transition: {
       type: "spring",
       stiffness: 100,
       restDelta: 2,
-      duration: .25,
+      duration: .5,
       damping: 15,
     }
   }),
   closed: {
-    clipPath: "circle(1px at 41px 60px)",
-    background: "rgba(255,255,255,.0)",
+    clipPath: "circle(0px at 0px 0px)",
+    background: "rgba(255,255,255,1)",
     zIndex: -1,
     transition: {
       delay: 0.5,
       type: "spring",
       stiffness: 400,
       damping: 40,
-      duration: .25
+      duration: .5
     }
   }
 };

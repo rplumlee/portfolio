@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import { FaHome, 
         FaUserCircle, 
         FaLaptopCode,
-        FaDribbble } from "react-icons/fa"
+        FaDribbble,
+        FaFileCode } from "react-icons/fa"
 
 const variants = {
   open: {
@@ -38,7 +39,7 @@ export const MenuItem = ({ id, url, label } : { id: number, url: string, label: 
         <div className="icon-placeholder" style={{color:"#222"}} >
           {id == 0 ? <FaUserCircle /> : ""}
           {id == 1 ? <FaLaptopCode /> : ""}
-          {id == 2 ? <FaDribbble /> : ""}
+          {id == 2 ? <FaFileCode /> : ""}
           {id == 3 ? <FaUserCircle /> : ""}
         </div>
         <div className="text-placeholder" style={{color:"#222"}} >{label}</div>

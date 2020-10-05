@@ -29,10 +29,14 @@ export const Main = () => {
   const toggleSwitch = () => setPartyMode(!partyMode);
   const [isOpen, toggleOpen] = useCycle(false, true);
 
+
   const location = useLocation();
 
   React.useEffect(() => {
     isOpen ? toggleOpen() : {}
+ 
+  
+
     setPartyMode(false)
   }, [location]);
 
@@ -55,6 +59,18 @@ enum Type {
     none = "none"
 }
 
+const loaderVariants = {
+  "open" : {
+    opacity: 1,
+    transition: {
+      duration: 0
+    }
+  },
+  "closed" : {
+    opacity: 0
+  }
+}
+
 
   return (
    
@@ -62,6 +78,7 @@ enum Type {
     
       
         <div style={{width:"100vw"}}>
+        
         <Menu isOpen={isOpen} toggleOpen={toggleOpen} />
           <div style={{width: "100%"}}>
            
@@ -87,7 +104,6 @@ enum Type {
               <Route path="/">
                 <div className="contact">
                   <motion.a whileHover="hover" whileTap="hover" layout href="mailto:reidjplumlee@gmail.com"><FaEnvelope size={20} /><motion.span initial={{opacity:0, x: 30}} variants={variants}>reidjplumlee@gmail.com</motion.span></motion.a>
-                  <motion.a whileHover="hover" whileTap="hover" layout href={`${process.env.PUBLIC_URL}/resume`}><FaFileCode size={20} /><motion.span initial={{opacity:0, x: 30}} variants={variants}>Resume</motion.span></motion.a>
                   <motion.a whileHover="hover" whileTap="hover" layout href="https://linkedin.com/in/reid-plumlee" target="_blank"><FaLinkedin size={20} /><motion.span initial={{opacity:0, x: 30}} variants={variants}>Linkedin</motion.span></motion.a>
                 </div>
                 <div className="switch" data-partymode={partyMode} onClick={toggleSwitch}>

@@ -34,6 +34,11 @@ const items = [{
                 url: '/client-work',
                 label: "Client Work"
               },
+              {
+                id: 2,
+                url: '/resume',
+                label: "Resume"
+              },
               /*{
                 id: 2,
                 url: '/playground',
